@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "Skill di WCala",
   "maintainer": "WCala",
-  "generatedAt": "2026-11-27T13:45:34.062Z",
+  "generatedAt": "2026-11-27T18:05:55.836Z",
   "skills": [
     {
       "id": "blocco-note",
@@ -50,7 +50,7 @@
     {
       "id": "lista-desideri",
       "name": "Lista desideri",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "description": "I giochi che vuoi comprare, con la chiave più conveniente che si attiva nel tuo paese.",
       "author": "WCala",
       "kind": "skill",
@@ -91,8 +91,8 @@
       "files": [
         {
           "path": "README.md",
-          "sha256": "f30c423169a1c7e6ae9f8075b470b389cb4d4f6e42a91721f2851511c80692b7",
-          "size": 7483
+          "sha256": "918907a271d93c6874952dd2e1904f931e9496b92fb48e15179fcb30cddec7ee",
+          "size": 7446
         },
         {
           "path": "aggiorna.js",
@@ -106,8 +106,8 @@
         },
         {
           "path": "app.js",
-          "sha256": "91817e37b2f4eaf27279246819e50db24ab491281bd12a821412ec8077bd3c08",
-          "size": 32244
+          "sha256": "cfc5313db10207357dde044e7fbd5e1843049d60ae75b2ed66ab47538fc047ab",
+          "size": 32225
         },
         {
           "path": "avvisi.js",
@@ -151,7 +151,7 @@
         },
         {
           "path": "manifest.json",
-          "sha256": "a803b07dbe1d6cb2d8687226e367048d4a3bf1ad64cd5819d92d37295f12b953",
+          "sha256": "1b8d7e28af7ceeccd5a1dc1609e04aab859758573871207e457251f142bc3833",
           "size": 829
         },
         {
