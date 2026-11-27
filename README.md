@@ -25,8 +25,9 @@ scripts/            lo script che genera index.json
 1. Crea `skills/<id>/` con `manifest.json`, `README.md`, l'icona e la pagina: la via più
    semplice è partire da una copia di `skills/blocco-note/`. L'id è in minuscolo, con cifre
    e trattini, e deve coincidere con `id` nel manifest.
-2. Scrivi la skill con l'SDK che l'app le offre (`window.personal`): le sue funzioni sono
-   descritte in `public/__sdk__/sdk.js` del repository dell'app.
+2. Scrivi la skill con l'SDK che l'app le offre (`window.personal`). `skills/blocco-note` è
+   l'esempio minimo, con il solo archivio; `skills/lista-desideri` usa anche la rete, il
+   paese e le impostazioni.
 3. Aggiungi una riga alla tabella qui sopra.
 4. Rigenera l'elenco con `node scripts/build-index.mjs` e metti `index.json` nello stesso
    commit. L'app legge da lì versione, manifest e impronte dei file: se non lo rigeneri non
