@@ -1,7 +1,7 @@
 // L'interfaccia della skill: tre viste (la lista, i risultati di una ricerca, la scheda di
 // un gioco) dentro #vista. La lettura del sito e le regole sui prezzi stanno in aks.js, le
 // regioni in regioni.js, gli avvisi in avvisi.js, «Conviene l'ufficiale» in occasioni.js, il
-// ritmo delle richieste in coda.js, l'aggiornamento dei prezzi in aggiorna.js: hanno i loro test.
+// ritmo delle richieste in coda.js, l'aggiornamento dei prezzi in aggiorna.js.
 
 import { creaAggiornatore } from "./aggiorna.js";
 import {

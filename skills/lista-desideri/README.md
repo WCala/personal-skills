@@ -113,7 +113,7 @@ riaggiornata si riconosce perché non ha `paese`: le mancano anche `evitati`, `o
 - `formato.js`: come si scrivono gli importi.
 - `coda.js`: la coda che distanzia le richieste.
 - `aggiorna.js`: l'aggiornamento dei prezzi della lista, una richiesta per pagina.
-- `app.js`: l'interfaccia, l'unica parte senza test automatici.
+- `app.js`: l'interfaccia.
 
 Serve Personal con il paese e le impostazioni delle skill (`personal.app.paese`,
 `personal.settings`): su una versione precedente la skill lo dice e si ferma.

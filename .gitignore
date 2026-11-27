@@ -17,7 +17,6 @@
 # (2) Dipendenze, solo nella radice: dentro skills/ andrebbero nell'indice
 /node_modules
 
-# (3) Autorizzazioni locali di Claude Code e variabili della macchina
-/.claude/settings.local.json
+# (3) Variabili della macchina
 /.env
 /.env.*
