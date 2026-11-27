@@ -1,0 +1,175 @@
+{
+  "schema": 1,
+  "name": "Skill di WCala",
+  "maintainer": "WCala",
+  "generatedAt": "2026-11-27T13:45:34.062Z",
+  "skills": [
+    {
+      "id": "blocco-note",
+      "name": "Blocco note",
+      "version": "1.0.1",
+      "description": "Appunti veloci, salvati nell'app.",
+      "kind": "skill",
+      "entry": "index.html",
+      "icon": "icon.svg",
+      "permissions": [],
+      "platforms": [],
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "c524c421c02f09c549e16b93a507b3a219652d67f38eeddc9175d094b3e8349a",
+          "size": 680
+        },
+        {
+          "path": "app.js",
+          "sha256": "b4f11e4adf9238bfae7468cde0f15275f2c1d34be51085cf587d27fc607c467d",
+          "size": 1921
+        },
+        {
+          "path": "icon.svg",
+          "sha256": "966d4966c890326b7c4bd5a711bc6176df156f4b77b8819cbb6d23feeb990d6c",
+          "size": 326
+        },
+        {
+          "path": "index.html",
+          "sha256": "bd6aeb3ee6b62582c3a7ff64530d26b4d10ecaddaf20a67a3ae81530154246a9",
+          "size": 729
+        },
+        {
+          "path": "manifest.json",
+          "sha256": "911dbf88666f0d0e472addb9d923f6c939bd20a512aa3e64aea2a280951981fb",
+          "size": 233
+        },
+        {
+          "path": "style.css",
+          "sha256": "c7da2a5ea237890dfda5c75dfd94b75480c342bf10bd72e186fdf2d69d8e2c11",
+          "size": 1462
+        }
+      ]
+    },
+    {
+      "id": "lista-desideri",
+      "name": "Lista desideri",
+      "version": "1.1.1",
+      "description": "I giochi che vuoi comprare, con la chiave più conveniente che si attiva nel tuo paese.",
+      "author": "WCala",
+      "kind": "skill",
+      "entry": "index.html",
+      "icon": "icon.svg",
+      "permissions": [
+        "net"
+      ],
+      "net": {
+        "allow": [
+          "www.allkeyshop.com",
+          "cdn.allkeyshop.com"
+        ]
+      },
+      "platforms": [],
+      "provides": [
+        {
+          "id": "desideri",
+          "description": "I giochi in lista con il prezzo migliore e quello ufficiale, in centesimi di euro"
+        }
+      ],
+      "settings": [
+        {
+          "id": "siti-evitati",
+          "type": "list",
+          "label": "Siti da evitare",
+          "default": []
+        },
+        {
+          "id": "soglia-ufficiale",
+          "type": "number",
+          "label": "Soglia per l'ufficiale (€)",
+          "default": 5.99,
+          "min": 0,
+          "max": 50
+        }
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "f30c423169a1c7e6ae9f8075b470b389cb4d4f6e42a91721f2851511c80692b7",
+          "size": 7483
+        },
+        {
+          "path": "aggiorna.js",
+          "sha256": "f3b6153095e7ceccbd0284a334a1ae0d3df128c1a49e6c34759924796ac916a3",
+          "size": 3378
+        },
+        {
+          "path": "aks.js",
+          "sha256": "b1ce4156990d2fffb9f419b5fe8ab3bd6220d93e86264cf20740c4b72c0d7dcb",
+          "size": 16483
+        },
+        {
+          "path": "app.js",
+          "sha256": "91817e37b2f4eaf27279246819e50db24ab491281bd12a821412ec8077bd3c08",
+          "size": 32244
+        },
+        {
+          "path": "avvisi.js",
+          "sha256": "c2c2e6382cacf4ada65e60bf2e62099d34c4fd65364a7dcf6ace6cc4f8138189",
+          "size": 3965
+        },
+        {
+          "path": "coda.js",
+          "sha256": "731fe035cc5e026acead6cfc0c56d1a49a53083ed0342cc100a2f80857909bd9",
+          "size": 2146
+        },
+        {
+          "path": "fonts/LICENZA.txt",
+          "sha256": "cdfc9c43762a9a9fb64f9e451e1667fb2a6809b71fee19ec21dc60b6b57e4861",
+          "size": 9023
+        },
+        {
+          "path": "fonts/bricolage-grotesque.woff2",
+          "sha256": "a97804dc9fbe5fc972a08018c5eda4dab7ef2346f64c57e61419d05e6de4ea1c",
+          "size": 41344
+        },
+        {
+          "path": "fonts/figtree.woff2",
+          "sha256": "4ba7d3d096695818fe0686be4f1e82c6b05134e18a22260336130335027462dd",
+          "size": 20156
+        },
+        {
+          "path": "formato.js",
+          "sha256": "b0b494792965108c51e7ba335c04c398b606b1c41f3d243c38c8e6a553c9fd12",
+          "size": 302
+        },
+        {
+          "path": "icon.svg",
+          "sha256": "039cc24ebe13e76f53f9d7d04916e2e2645dba18842aa13b46c08f4d0f1fdce2",
+          "size": 379
+        },
+        {
+          "path": "index.html",
+          "sha256": "d36e5adb3795ebe38ce7b89d8d1591d151e4c38aa3f1a3274aba945b20dab615",
+          "size": 1113
+        },
+        {
+          "path": "manifest.json",
+          "sha256": "a803b07dbe1d6cb2d8687226e367048d4a3bf1ad64cd5819d92d37295f12b953",
+          "size": 829
+        },
+        {
+          "path": "occasioni.js",
+          "sha256": "bd7dce46abad54c5e3f900e075863c758f3b226e81885fe25b77eac7c2481be7",
+          "size": 1995
+        },
+        {
+          "path": "regioni.js",
+          "sha256": "65091dff75f417765c81ebdea14113ff7cad94dd7f5a81ef6c085b3ce909c352",
+          "size": 5255
+        },
+        {
+          "path": "style.css",
+          "sha256": "cabed1a3cfd5e0455067bca2edcc514d4437075e8a09a9d7466d256b85bea519",
+          "size": 8467
+        }
+      ]
+    }
+  ]
+}

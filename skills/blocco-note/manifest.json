@@ -1,0 +1,11 @@
+{
+  "id": "blocco-note",
+  "name": "Blocco note",
+  "version": "1.0.1",
+  "description": "Appunti veloci, salvati nell'app.",
+  "kind": "skill",
+  "entry": "index.html",
+  "icon": "icon.svg",
+  "permissions": [],
+  "platforms": []
+}

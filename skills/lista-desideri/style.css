@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("fonts/bricolage-grotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("fonts/figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+:root {
+  /* L'app sostituisce questi due valori con il colore scelto dall'utente. */
+  --gp-accent: #1597a8;
+  --gp-accent-ink: #ffffff;
+  --inchiostro: #14232b;
+  --grigio: #55646c;
+  --linea: #e2e8eb;
+  --titoli: "Bricolage Grotesque", "Figtree", system-ui, sans-serif;
+  --testo: "Figtree", system-ui, sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 400 16px/1.5 var(--testo);
+  color: var(--inchiostro);
+  background: transparent;
+}
+main { max-width: 42rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+.solo-lettori { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--gp-accent); outline-offset: 2px; }
+/* I titoli ricevono il fuoco solo per dire a chi usa un lettore di schermo che la vista è cambiata. */
+h1:focus { outline: none; }
+button:disabled { opacity: 0.5; cursor: default; }
+
+.pieno {
+  border: 0; border-radius: 999px; padding: 0.7rem 1.4rem; font-weight: 600;
+  background: var(--gp-accent); color: var(--gp-accent-ink);
+}
+
+/* Ricerca */
+.riga { display: flex; gap: 0.5rem; }
+#testo {
+  flex: 1; min-width: 0; padding: 0.7rem 1.1rem;
+  border: 1.5px solid var(--linea); border-radius: 999px; background: #fff;
+}
+.filtri { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-top: 0.9rem; }
+.filtri label { display: grid; gap: 0.15rem; font-size: 0.8125rem; color: var(--grigio); flex: 1 1 8.5rem; }
+.filtri select {
+  font-size: 0.9375rem; padding: 0.4rem 0.6rem; border: 1.5px solid var(--linea);
+  border-radius: 10px; background: #fff; min-width: 0; width: 100%;
+}
+
+#stato { color: var(--grigio); margin: 1.25rem 0 0.5rem; }
+#stato:empty { margin: 0 0 1.25rem; }
+/* Nella scheda i filtri non servono: lasciano il posto al prezzo. */
+body[data-vista="scheda"] .filtri { display: none; }
+#stato.errore { color: #a4282c; }
+
+/* Elenchi di giochi: risultati della ricerca e lista */
+.giochi { list-style: none; margin: 0; padding: 0; }
+.giochi > li { border-bottom: 1px solid var(--linea); }
+.gioco {
+  display: grid; grid-template-columns: 3.25rem 1fr; gap: 0.9rem; align-items: center;
+  width: 100%; padding: 0.7rem 0.25rem; border: 0; background: none; text-align: left; border-radius: 10px;
+}
+.gioco:hover { background: color-mix(in srgb, var(--gp-accent) 7%, transparent); }
+.copertina {
+  width: 3.25rem; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 8px;
+  background: var(--linea);
+}
+.gioco strong { display: block; font: 600 1.0625rem/1.25 var(--titoli); }
+.gioco span { color: var(--grigio); font-size: 0.9375rem; }
+
+/* Scheda di un gioco */
+.quieto {
+  border: 0; background: none; padding: 0.35rem 0.6rem; margin-left: -0.6rem; border-radius: 8px;
+  font-weight: 600; color: color-mix(in srgb, var(--gp-accent) 70%, var(--inchiostro));
+}
+.quieto:hover { background: color-mix(in srgb, var(--gp-accent) 9%, transparent); }
+.nota { color: var(--grigio); font-size: 0.9375rem; margin: 0; }
+
+.testata { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1.1rem; align-items: center; margin: 0.75rem 0 1.25rem; }
+.copertina.grande { width: 5.5rem; border-radius: 12px; }
+.testata h1 { font: 700 1.75rem/1.1 var(--titoli); margin: 0 0 0.3rem; text-wrap: balance; }
+.testata p { margin: 0; color: var(--grigio); }
+
+.edizione { display: grid; gap: 0.15rem; font-size: 0.8125rem; color: var(--grigio); max-width: 22rem; }
+.edizione select { font-size: 0.9375rem; padding: 0.4rem 0.6rem; border: 1.5px solid var(--linea); border-radius: 10px; background: #fff; }
+
+/* Il prezzo è la cosa da vedere per prima: la cifra grande e la barra del confronto. */
+.prezzo { margin: 1.5rem 0 1.25rem; }
+.cifra { font: 700 3.5rem/1 var(--titoli); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; margin: 0; }
+.da { margin: 0.4rem 0 0.45rem; color: var(--grigio); }
+.stato-chiave { margin: 0 0 1.1rem; }
+.stato-chiave .etichetta { margin-left: 0; font-size: 0.8125rem; padding: 0.2rem 0.6rem; }
+.barra { height: 0.75rem; border-radius: 999px; background: color-mix(in srgb, var(--inchiostro) 9%, transparent); overflow: hidden; }
+.barra-piena { height: 100%; border-radius: 999px; background: var(--gp-accent); }
+.confronto p { margin: 0.5rem 0 0; }
+.azioni { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.25rem; }
+
+.prezzi { list-style: none; margin: 0.5rem 0 1.25rem; padding: 0; }
+.prezzi li {
+  display: grid; grid-template-columns: 5.5rem 1fr auto; gap: 0.75rem; align-items: center;
+  padding: 0.55rem 0; border-bottom: 1px solid var(--linea);
+}
+.prezzi b { font: 600 1.0625rem var(--titoli); font-variant-numeric: tabular-nums; }
+.prezzi strong { font-weight: 600; }
+.prezzi span { display: block; color: var(--grigio); font-size: 0.875rem; }
+.prezzi .quieto { margin-left: 0; }
+.etichetta {
+  font-style: normal; font-size: 0.75rem; font-weight: 600; margin-left: 0.5rem; padding: 0.1rem 0.45rem;
+  border-radius: 999px; background: color-mix(in srgb, var(--inchiostro) 7%, transparent); color: var(--grigio);
+}
+/* Un account o un disco non sono una chiave: vanno notati. */
+.etichetta.account { background: #fdecc8; color: #7a5200; }
+/* Se la chiave si attiva nel paese dell'utente: sì, no, non si sa. */
+.etichetta.attivazione.si { background: color-mix(in srgb, var(--gp-accent) 14%, #fff); color: color-mix(in srgb, var(--gp-accent) 62%, var(--inchiostro)); }
+.etichetta.attivazione.no { background: #fdecea; color: #8c1d18; }
+.etichetta.attivazione.da-verificare { background: #fdecc8; color: #7a5200; }
+.etichetta.occasione { background: var(--gp-accent); color: var(--gp-accent-ink); }
+.prezzi .etichetta { display: inline-block; margin: 0.15rem 0 0.15rem 0.5rem; }
+.conviene { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.6rem; }
+.conviene .etichetta { margin-left: 0; }
+
+/* La finestra con cui la skill fa una domanda prima di aggiungere un gioco. */
+.finestra {
+  width: min(30rem, calc(100vw - 2rem)); padding: 1.4rem 1.5rem 1.25rem; border: 0; border-radius: 18px;
+  color: var(--inchiostro); box-shadow: 0 18px 48px rgb(20 35 43 / 0.24);
+}
+.finestra::backdrop { background: rgb(20 35 43 / 0.32); }
+.finestra p { margin: 0; font-size: 1.0625rem; overflow-wrap: anywhere; }
+.finestra .azioni { justify-content: flex-end; align-items: center; }
+.finestra .quieto { margin-left: 0; }
+.scheda > .nota { margin-top: 1rem; }
+[hidden] { display: none !important; }
+
+.contorno {
+  border: 1.5px solid color-mix(in srgb, var(--gp-accent) 55%, var(--linea)); border-radius: 999px;
+  padding: 0.6rem 1.3rem; font-weight: 600; background: #fff;
+}
+
+/* La lista */
+.intestazione { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 0.5rem; }
+.intestazione h1 { font: 700 1.75rem/1.1 var(--titoli); margin: 0 0 0.25rem; }
+.intestazione p { margin: 0; color: var(--grigio); }
+.intestazione .nota { margin-top: 0.25rem; }
+.voce { display: grid; grid-template-columns: 1fr auto; column-gap: 1rem; align-items: center; padding-bottom: 0.4rem; }
+.prezzo-riga { text-align: right; min-width: 7.5rem; }
+.prezzo-riga b { display: block; font: 700 1.375rem/1.2 var(--titoli); font-variant-numeric: tabular-nums; }
+.prezzo-riga span { display: block; color: var(--grigio); font-size: 0.875rem; }
+.prezzo-riga .barra { height: 0.375rem; margin: 0.35rem 0 0.2rem; }
+.piede { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 1rem; padding-left: 4.4rem; font-size: 0.875rem; color: var(--grigio); }
+.piede span { margin-right: auto; }
+.piede .errore { color: #a4282c; }
+/* Sotto il nome del gioco: l'attivazione e, se c'è, «Conviene l'ufficiale». */
+.etichette { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 0.6rem; padding: 0 0 0.35rem 4.4rem; font-size: 0.875rem; color: var(--grigio); }
+.etichette .etichetta { margin-left: 0; }
+.filtro { display: flex; align-items: center; gap: 0.6rem; margin: 0.75rem 0 0.25rem; font-size: 0.9375rem; }
+.filtro input { width: 1.1rem; height: 1.1rem; accent-color: var(--gp-accent); }
+.piede .quieto { margin-left: 0; }

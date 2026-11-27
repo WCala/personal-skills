@@ -1,0 +1,3 @@
+# I file devono arrivare identici a come sono stati scritti: le impronte sha256
+# in index.json si calcolano sui byte esatti.
+* -text

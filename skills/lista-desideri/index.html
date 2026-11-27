@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lista desideri</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <form id="cerca" role="search" autocomplete="off">
+        <div class="riga">
+          <label class="solo-lettori" for="testo">Cerca un gioco</label>
+          <input id="testo" type="search" maxlength="80" placeholder="Cerca un gioco" required />
+          <button type="submit" class="pieno">Cerca</button>
+        </div>
+        <div class="filtri">
+          <label>Piattaforma <select id="f-piattaforma"></select></label>
+          <label>Tipo <select id="f-tipo"></select></label>
+          <label>Genere <select id="f-genere"></select></label>
+          <label>Giocatori <select id="f-giocatori"></select></label>
+        </div>
+      </form>
+      <p id="stato" role="status"></p>
+      <section id="vista"></section>
+    </main>
+    <script src="/__sdk__/sdk.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

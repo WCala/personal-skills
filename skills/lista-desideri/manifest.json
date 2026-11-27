@@ -1,0 +1,30 @@
+{
+  "id": "lista-desideri",
+  "name": "Lista desideri",
+  "version": "1.1.1",
+  "description": "I giochi che vuoi comprare, con la chiave più conveniente che si attiva nel tuo paese.",
+  "author": "WCala",
+  "kind": "skill",
+  "entry": "index.html",
+  "icon": "icon.svg",
+  "permissions": ["net"],
+  "net": { "allow": ["www.allkeyshop.com", "cdn.allkeyshop.com"] },
+  "platforms": [],
+  "provides": [
+    {
+      "id": "desideri",
+      "description": "I giochi in lista con il prezzo migliore e quello ufficiale, in centesimi di euro"
+    }
+  ],
+  "settings": [
+    { "id": "siti-evitati", "type": "list", "label": "Siti da evitare", "default": [] },
+    {
+      "id": "soglia-ufficiale",
+      "type": "number",
+      "label": "Soglia per l'ufficiale (€)",
+      "default": 5.99,
+      "min": 0,
+      "max": 50
+    }
+  ]
+}

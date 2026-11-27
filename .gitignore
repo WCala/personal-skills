@@ -1,0 +1,23 @@
+# Su GitHub stanno solo i file che servono all'app: le skill, il catalogo e lo script che
+# genera index.json. Il numero tra parentesi dice perché una voce è qui:
+#   (2) lo ricrea un comando, o è un file del sistema e dell'editor;
+#   (3) descrive una macchina, non il progetto.
+#
+# Attenzione: build-index.mjs legge la cartella skills/, non il commit. Nessuna voce qui
+# deve nascondere un file dentro skills/: finirebbe nell'indice ma non su GitHub, e l'app
+# rifiuterebbe l'installazione.
+
+# (2) File del sistema e dell'editor. Dentro una skill build-index.mjs salta i nomi che
+# iniziano con un punto; una cartella così direttamente in skills/ la prenderebbe invece
+# per una skill e il controllo fallirebbe («manca manifest.json»).
+.DS_Store
+.vscode/
+.idea/
+.*.swp
+# (2) Dipendenze, solo nella radice: dentro skills/ andrebbero nell'indice
+/node_modules
+
+# (3) Autorizzazioni locali di Claude Code e variabili della macchina
+/.claude/settings.local.json
+/.env
+/.env.*

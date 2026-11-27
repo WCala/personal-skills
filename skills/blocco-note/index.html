@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blocco note</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <form id="nuova" autocomplete="off">
+        <label for="testo">Nuova nota</label>
+        <div class="riga">
+          <input id="testo" name="testo" maxlength="500" placeholder="Scrivi e premi Invio" required />
+          <button type="submit">Aggiungi</button>
+        </div>
+      </form>
+      <p id="stato" role="status"></p>
+      <ul id="elenco"></ul>
+    </main>
+    <script src="/__sdk__/sdk.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
