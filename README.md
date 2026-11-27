@@ -52,3 +52,10 @@ l'aggiornamento) e rigenera `index.json` come sopra.
 - Con il permesso `net`, in `net.allow` vanno solo gli host davvero necessari.
 - Ogni file può pesare al massimo 20 MB, una skill 60 MB.
 - `index.json` contiene l'impronta sha256 di ogni file: l'app rifiuta i file che non coincidono.
+
+## Licenza
+
+[Apache License 2.0](LICENSE). Copyright 2026 WCala.
+
+I caratteri dentro le skill hanno la loro licenza, scritta accanto ai file (per esempio
+`skills/lista-desideri/fonts/LICENZA.txt`).
